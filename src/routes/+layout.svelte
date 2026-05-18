@@ -88,7 +88,7 @@
         <ul class="space-y-2">
           {#each ['Taladros', 'Hidrolavadoras', 'Pulidoras', 'Corte', 'Kits'] as cat}
             <li>
-              <a href="/productos" class="text-zinc-500 hover:text-white text-sm transition-colors">
+              <a href="/productos?categoria={cat.toLowerCase().replace(/ /g, '-')}" class="text-zinc-500 hover:text-white text-sm transition-colors">
                 {cat}
               </a>
             </li>
@@ -98,16 +98,16 @@
       <div>
         <p class="text-white text-sm font-medium mb-4">Empresa</p>
         <ul class="space-y-2">
-          {#each ['Nosotros', 'Contacto', 'Garantía'] as item}
-            <li><span class="text-zinc-500 text-sm">{item}</span></li>
-          {/each}
+          <li><a href="/productos" class="text-zinc-500 hover:text-white text-sm transition-colors">Catálogo</a></li>
+          <li><span class="text-zinc-600 text-sm">Nosotros</span></li>
+          <li><span class="text-zinc-600 text-sm">Garantía</span></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex justify-between items-center">
-    <p class="text-zinc-600 text-xs">© 2026 Vultus. Todos los derechos reservados.</p>
-    <p class="text-zinc-600 text-xs">Hecho en México</p>
+  <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-2">
+    <p class="text-zinc-600 text-xs">© 2026 Vultus Tools. Todos los derechos reservados.</p>
+    <p class="text-zinc-600 text-xs">Hecho con ❤️ en México 🇲🇽</p>
   </div>
 </footer>
